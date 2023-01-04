@@ -50,6 +50,7 @@ type Query
 {
   addresses: [Address] @join__field(graph: ADDRESS)
   address(id: ID!): Address @join__field(graph: ADDRESS)
+  users: [User] @join__field(graph: USERS)
 }
 
 type User

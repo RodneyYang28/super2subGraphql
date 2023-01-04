@@ -15,6 +15,11 @@ const users = [
 const typeDefs = gql(readFileSync('./user.graphql', { encoding: 'utf-8' }));
 
 const resolvers = {
+  Query: {
+    users() {
+      return users
+    }
+  },
   User: {
     __resolveReference(reference) {
       return users.find(u=> u.email===reference.email)
